@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/20200309223026.png">
 <meta property="og:image" content="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/iterm2.png">
 <meta property="article:published_time" content="2020-03-09T14:02:00.000Z">
-<meta property="article:modified_time" content="2020-03-09T15:58:04.310Z">
+<meta property="article:modified_time" content="2020-03-09T16:01:33.930Z">
 <meta property="article:author" content="Pluto">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/aliyun.png">
@@ -194,37 +194,31 @@
 </blockquote>
 <a id="more"></a>
 
-<h3 id="先进行远程连接阿里云"><a href="#先进行远程连接阿里云" class="headerlink" title="先进行远程连接阿里云"></a>先进行远程连接阿里云</h3><ol>
-<li><p>首先，打开阿里云，查看公网id，如图：</p>
+<h3 id="先进行远程连接阿里云"><a href="#先进行远程连接阿里云" class="headerlink" title="先进行远程连接阿里云"></a>先进行远程连接阿里云</h3><p>一、 首先，打开阿里云，查看公网id，如图：</p>
 <img src="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/aliyun.png" style="zoom:80%;" />
-第一行的就是公网id。
-</li>
-<li><p>打开iTerm2，点击左上角【iTerm2】–&gt;【Preferences】 –&gt;【Profiles】<br><img src="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/20200309223026.png" alt=""><br>此图片截取自<a href="https://www.jianshu.com/p/590b9d699b44" target="_blank" rel="noopener">https://www.jianshu.com/p/590b9d699b44</a></p>
+
+<p>第一行的就是公网id。</p>
+<p>二、 打开iTerm2，点击左上角【iTerm2】–&gt;【Preferences】 –&gt;【Profiles】</p>
+<p><img src="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/20200309223026.png" alt=""><br>此图片截取自<a href="https://www.jianshu.com/p/590b9d699b44" target="_blank" rel="noopener">https://www.jianshu.com/p/590b9d699b44</a></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -A -p 22 root@【公网ip】</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>此时能很方便的打开一个连接服务器的窗口。</p>
+
+<p>三、 此时能很方便的打开一个连接服务器的窗口。</p>
 <img src="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/iterm2.png" style="zoom:80%;" />
-点击Aliyun就能进去了。
-</li>
-<li><p>输入密码，就是阿里云的实例密码。</p>
-</li>
-</ol>
-<h3 id="使用密钥实现免密登陆"><a href="#使用密钥实现免密登陆" class="headerlink" title="使用密钥实现免密登陆"></a>使用密钥实现免密登陆</h3><ol>
-<li><p>New一个新的窗口，进入自己电脑，即点击上图中的【Aliyun】上方的【Default】。</p>
-</li>
-<li><p>查看本机的是否有密钥</p>
+
+<p>点击Aliyun就能进去了。</p>
+<p>四、 输入密码，就是阿里云的实例密码。</p>
+<h3 id="使用密钥实现免密登陆"><a href="#使用密钥实现免密登陆" class="headerlink" title="使用密钥实现免密登陆"></a>使用密钥实现免密登陆</h3><p>一、 New一个新的窗口，进入自己电脑，即点击上图中的【Aliyun】上方的【Default】。</p>
+<p>二、 查看本机的是否有密钥</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh/</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure>
+
 <p>复制下来里面的内容</p>
-</li>
-<li><p>在【Aliyun】的窗口中（第一次需要输入密码进入），输入以下命令</p>
+<p>三、 在【Aliyun】的窗口中（第一次需要输入密码进入），输入以下命令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh/</span><br><span class="line">vim authorized_keys</span><br></pre></td></tr></table></figure>
-<p>按下键盘【a】键，进行输入模式，粘贴之前复制的密钥。<br>按【esc】键，再连续按下英文冒号和wq【:wq】，回车。</p>
-</li>
-<li><p>【Aliyun】终端中输入<code>exit</code>，退出。</p>
-</li>
-<li><p>再次进入，发现已经不需要输入密码了。</p>
-</li>
-</ol>
+
+<p>按下键盘【a】键，进行输入模式，粘贴之前复制的密钥。</p>
+<p>按【esc】键，再连续按下英文冒号和wq【:wq】，回车。</p>
+<p>四、 【Aliyun】终端中输入<code>exit</code>，退出。</p>
+<p>五、 再次进入，发现已经不需要输入密码了。</p>
 <hr>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="https://www.jianshu.com/p/590b9d699b44" target="_blank" rel="noopener">https://www.jianshu.com/p/590b9d699b44</a></li>
