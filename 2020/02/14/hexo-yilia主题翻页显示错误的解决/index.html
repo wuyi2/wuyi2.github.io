@@ -191,8 +191,8 @@
         <h2 id="博客翻页键bug"><a href="#博客翻页键bug" class="headerlink" title="博客翻页键bug"></a>博客翻页键bug</h2><p>在写了些博客后，博客数量超过了10，于是开启了一个新功能！翻页！</p>
 <p>结果在看上去没有问题的页面上出现了bug，如图：</p>
 <a id="more"></a>
-<p><img src="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/76D6E31F7A70F714B1319CA54877D330.jpg" alt="76D6E31F7A70F714B1319CA54877D330" style="zoom:50%;" />（页面&lt;1&gt;）</p>
-<p><img src="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/DF128C345162AB93F04A06870EB4A6E6.jpg" alt="DF128C345162AB93F04A06870EB4A6E6" style="zoom:47%;" />（页面&lt;2&gt;）</p>
+<p><img src="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/76D6E31F7A70F714B1319CA54877D330.jpg" alt="76D6E31F7A70F714B1319CA54877D330" style="zoom:50%;">（页面&lt;1&gt;）</p>
+<p><img src="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/DF128C345162AB93F04A06870EB4A6E6.jpg" alt="DF128C345162AB93F04A06870EB4A6E6" style="zoom:47%;">（页面&lt;2&gt;）</p>
 <p>本来应该是下一页的按键 <code>»</code> 变成了 <code>&amp;raquo</code> ；上一页的按键 <code>«</code> 变成了 <code>&amp;laquo</code> 。</p>
 <p>上网查找之后，没找到直接对应的问题解答，看见有其他人写的翻页的代码均为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (page.total &gt; 1)&#123; %&gt;</span><br><span class="line">  &lt;nav id&#x3D;&quot;page-nav&quot;&gt;</span><br><span class="line">    &lt;%- paginator(&#123;</span><br><span class="line">      prev_text: &quot;&amp;laquo; Prev&quot;,</span><br><span class="line">      next_text: &quot;Next &amp;raquo;&quot;</span><br><span class="line">    &#125;) %&gt;</span><br><span class="line">  &lt;&#x2F;nav&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
