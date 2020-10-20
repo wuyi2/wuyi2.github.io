@@ -14,13 +14,13 @@
 <meta property="og:url" content="http://wuyi2.github.io/2020/02/14/hexo-yilia%E4%B8%BB%E9%A2%98%E7%BF%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3/index.html">
 <meta property="og:site_name" content="Pluto-Charon">
 <meta property="og:description" content="博客翻页键bug在写了些博客后，博客数量超过了10，于是开启了一个新功能！翻页！ 结果在看上去没有问题的页面上出现了bug，如图：">
-<meta property="og:image" content="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/76D6E31F7A70F714B1319CA54877D330.jpg">
-<meta property="og:image" content="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/DF128C345162AB93F04A06870EB4A6E6.jpg">
+<meta property="og:image" content="http://wuyi2.github.io/2020/02/14/hexo-yilia%E4%B8%BB%E9%A2%98%E7%BF%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3/%E6%8D%A2%E9%A1%B51.jpeg">
+<meta property="og:image" content="http://wuyi2.github.io/2020/02/14/hexo-yilia%E4%B8%BB%E9%A2%98%E7%BF%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3/%E6%8D%A2%E9%A1%B52.jpeg">
 <meta property="article:published_time" content="2020-02-14T13:25:33.000Z">
-<meta property="article:modified_time" content="2020-02-14T13:31:11.278Z">
+<meta property="article:modified_time" content="2020-10-19T14:47:55.600Z">
 <meta property="article:author" content="Pluto">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/76D6E31F7A70F714B1319CA54877D330.jpg">
+<meta name="twitter:image" content="http://wuyi2.github.io/2020/02/14/hexo-yilia%E4%B8%BB%E9%A2%98%E7%BF%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3/%E6%8D%A2%E9%A1%B51.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="Pluto-Charon" type="application/atom+xml">
   
@@ -191,8 +191,8 @@
         <h2 id="博客翻页键bug"><a href="#博客翻页键bug" class="headerlink" title="博客翻页键bug"></a>博客翻页键bug</h2><p>在写了些博客后，博客数量超过了10，于是开启了一个新功能！翻页！</p>
 <p>结果在看上去没有问题的页面上出现了bug，如图：</p>
 <a id="more"></a>
-<p><img src="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/76D6E31F7A70F714B1319CA54877D330.jpg" alt="76D6E31F7A70F714B1319CA54877D330" style="zoom:50%;">（页面&lt;1&gt;）</p>
-<p><img src="http://q5mt62k0g.bkt.clouddn.com/qiniu_PicGo/DF128C345162AB93F04A06870EB4A6E6.jpg" alt="DF128C345162AB93F04A06870EB4A6E6" style="zoom:47%;">（页面&lt;2&gt;）</p>
+<p><img src="/2020/02/14/hexo-yilia%E4%B8%BB%E9%A2%98%E7%BF%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3/换页1.jpeg" alt="页面《1》" style="zoom:50%;">（页面&lt;1&gt;）</p>
+<p><img src="/2020/02/14/hexo-yilia%E4%B8%BB%E9%A2%98%E7%BF%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3/换页2.jpeg" alt="页面《2》" style="zoom:47%;">（页面&lt;2&gt;）</p>
 <p>本来应该是下一页的按键 <code>»</code> 变成了 <code>&amp;raquo</code> ；上一页的按键 <code>«</code> 变成了 <code>&amp;laquo</code> 。</p>
 <p>上网查找之后，没找到直接对应的问题解答，看见有其他人写的翻页的代码均为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (page.total &gt; 1)&#123; %&gt;</span><br><span class="line">  &lt;nav id&#x3D;&quot;page-nav&quot;&gt;</span><br><span class="line">    &lt;%- paginator(&#123;</span><br><span class="line">      prev_text: &quot;&amp;laquo; Prev&quot;,</span><br><span class="line">      next_text: &quot;Next &amp;raquo;&quot;</span><br><span class="line">    &#125;) %&gt;</span><br><span class="line">  &lt;&#x2F;nav&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
